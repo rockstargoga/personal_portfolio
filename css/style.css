@@ -807,14 +807,15 @@ ul {
 
 /*=============== FOOTER ===============*/
 .footer {
-  padding: var(--space-5) 0;
-  border-top: 1px solid var(--border);
+  /* Reduced vertical padding to tighten footer spacing */
+  padding: var(--space-3) 0;
   text-align: center;
 }
 
 .footer p {
   font-size: var(--text-sm);
   color: var(--text-tertiary);
+  margin: 0.25rem 0; /* small vertical margin to keep baseline rhythm */
 }
 
 /*=============== ANIMATIONS ===============*/

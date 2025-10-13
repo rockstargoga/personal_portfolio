@@ -347,7 +347,7 @@ This guide shows you **exactly** where to make changes, with screenshots and exa
 ## 📱 What Each File Does
 
 | File | What It Does | When to Edit |
-|------|-------------|--------------|
+|------|-------------|--------------|-m
 | `index.html` | Your website content | Change text, add projects, update links |
 | `css/style.css` | How it looks | Change colors, fonts, spacing |
 | `js/main.js` | How it works | Usually don't need to edit |
