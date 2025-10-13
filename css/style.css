@@ -141,6 +141,7 @@ ul {
   line-height: var(--leading-tight);
   margin-bottom: var(--space-8);
   max-width: 100%;
+  text-align: left;
 }
 
 @media (min-width: 768px) {
@@ -402,7 +403,7 @@ ul {
   color: var(--text-secondary);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-6);
-  max-width: 1000px;
+  text-align: justify;
 }
 
 .bio p:last-child {
