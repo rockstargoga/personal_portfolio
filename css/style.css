@@ -12,6 +12,9 @@
   --accent: #0071e3;
   --border: #d2d2d7;
   
+  /* Purple Gradient for Hero Name */
+  --purple-gradient: linear-gradient(135deg, #6B2FD6 0%, #8B5CF6 100%);
+  
   /* Typography - System Fonts */
   --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Display", 
                  "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -298,6 +301,10 @@ ul {
   font-weight: var(--weight-bold);
   letter-spacing: -0.03em;
   margin-bottom: var(--space-4);
+  background: var(--purple-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @media (min-width: 768px) {
