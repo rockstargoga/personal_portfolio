@@ -133,21 +133,8 @@ style.textContent = `
 document.head.appendChild(style);
 
 /*=============== PERFORMANCE ===============*/
-// Lazy load images if any are added in the future
-if ('loading' in HTMLImageElement.prototype) {
-  const images = document.querySelectorAll('img[loading="lazy"]');
-  images.forEach(img => {
-    // Only set src from data-src if data-src exists
-    if (img.dataset.src) {
-      img.src = img.dataset.src;
-    }
-  });
-} else {
-  // Fallback for browsers that don't support lazy loading
-  const script = document.createElement('script');
-  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-  document.body.appendChild(script);
-}
+// Lazy load images - modern browsers support loading="lazy" natively
+// No additional JavaScript needed for lazy loading
 
 /*=============== CONSOLE MESSAGE ===============*/
 // Minimal console message for developers
