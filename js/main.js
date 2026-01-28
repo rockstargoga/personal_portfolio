@@ -21,6 +21,33 @@ themeToggle?.addEventListener('click', () => {
   localStorage.setItem('theme', theme);
 });
 
+/*=============== MOBILE MENU TOGGLE ===============*/
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+const navLinks = document.querySelectorAll('.nav__link');
+
+// Toggle mobile menu
+navToggle?.addEventListener('click', () => {
+  navToggle.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
+
+// Close menu when clicking on a link
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle?.classList.remove('active');
+    navMenu?.classList.remove('active');
+  });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!navToggle?.contains(e.target) && !navMenu?.contains(e.target)) {
+    navToggle?.classList.remove('active');
+    navMenu?.classList.remove('active');
+  }
+});
+
 /*=============== SMOOTH SCROLL ===============*/
 // Only apply smooth scroll if user hasn't requested reduced motion
 if (!prefersReducedMotion) {
@@ -131,6 +158,105 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+
+/*=============== PARALLAX STARFIELD EFFECT ===============*/
+// Add parallax effect to hero and contact starfield on mouse move (only if not reduced motion)
+if (!prefersReducedMotion) {
+  const heroSection = document.querySelector('.hero');
+  const contactSection = document.querySelector('.contact');
+  
+  const addParallax = (section) => {
+    if (section) {
+      section.addEventListener('mousemove', (e) => {
+        const { clientX, clientY } = e;
+        const { offsetWidth, offsetHeight } = section;
+        
+        // Calculate mouse position as percentage
+        const xPercent = (clientX / offsetWidth - 0.5) * 2; // -1 to 1
+        const yPercent = (clientY / offsetHeight - 0.5) * 2; // -1 to 1
+        
+        // Apply subtle transform to starfield layers
+        const moveX = xPercent * 20; // Max 20px movement
+        const moveY = yPercent * 20;
+        
+        // Update CSS custom properties for parallax
+        section.style.setProperty('--mouse-x', `${moveX}px`);
+        section.style.setProperty('--mouse-y', `${moveY}px`);
+      });
+      
+      // Reset on mouse leave
+      section.addEventListener('mouseleave', () => {
+        section.style.setProperty('--mouse-x', '0px');
+        section.style.setProperty('--mouse-y', '0px');
+      });
+    }
+  };
+  
+  addParallax(heroSection);
+  addParallax(contactSection);
+}
+
+/*=============== DRAGGABLE SKILL TAGS ===============*/
+// Make skill tags draggable with live reordering (only if not reduced motion)
+if (!prefersReducedMotion) {
+  const skillsContainer = document.querySelector('.skills');
+  
+  if (skillsContainer) {
+    const skills = skillsContainer.querySelectorAll('.skill');
+    let draggedElement = null;
+    
+    skills.forEach(skill => {
+      skill.setAttribute('draggable', 'true');
+      skill.style.cursor = 'grab';
+      
+      skill.addEventListener('dragstart', (e) => {
+        draggedElement = skill;
+        skill.classList.add('dragging');
+        setTimeout(() => {
+          skill.style.opacity = '0.5';
+        }, 0);
+      });
+      
+      skill.addEventListener('dragend', (e) => {
+        skill.classList.remove('dragging');
+        skill.style.opacity = '1';
+        // Remove drag-over class from all skills
+        skillsContainer.querySelectorAll('.skill').forEach(s => s.classList.remove('drag-over'));
+      });
+      
+      skill.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        
+        if (skill !== draggedElement && draggedElement) {
+          // Get all current skills
+          const allSkills = [...skillsContainer.children];
+          const draggedIndex = allSkills.indexOf(draggedElement);
+          const targetIndex = allSkills.indexOf(skill);
+          
+          // Live reordering - move the dragged element as you hover
+          if (draggedIndex < targetIndex) {
+            // Moving forward - insert after target
+            skill.parentNode.insertBefore(draggedElement, skill.nextSibling);
+          } else if (draggedIndex > targetIndex) {
+            // Moving backward - insert before target
+            skill.parentNode.insertBefore(draggedElement, skill);
+          }
+        }
+      });
+      
+      skill.addEventListener('dragenter', (e) => {
+        e.preventDefault();
+        if (skill !== draggedElement) {
+          skill.classList.add('drag-over');
+        }
+      });
+      
+      skill.addEventListener('dragleave', (e) => {
+        skill.classList.remove('drag-over');
+      });
+    });
+  }
+}
 
 /*=============== PERFORMANCE ===============*/
 // Lazy load images - modern browsers support loading="lazy" natively

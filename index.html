@@ -18,7 +18,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>RM</text></svg>">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=20260127">
+    <link rel="stylesheet" href="css/style.css?v=20260128final">
     
     <title>Rohit Meshram - Quality Engineer at Apple</title>
 </head>
@@ -27,7 +27,10 @@
     <nav class="nav" id="nav">
         <div class="nav__container">
             <a href="#" class="nav__logo">RM</a>
-            <ul class="nav__menu">
+            <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span class="nav__toggle-icon"></span>
+            </button>
+            <ul class="nav__menu" id="nav-menu">
                 <li><a href="#about" class="nav__link">About</a></li>
                 <li><a href="#expertise" class="nav__link">Expertise</a></li>
                 <li><a href="#work" class="nav__link">Work</a></li>
@@ -56,9 +59,27 @@
                     I build scalable quality systems with <span class="highlight-text">11+ years</span> of experience for high-precision hardware - leveraging AI, analytical modeling, and global supplier collaboration to deliver sustainable, reliable manufacturing driven by structured problem-solving.
                 </p>
                 <div class="hero__cta">
-                    <a href="#work" class="btn btn-primary">View Work</a>
-                    <a href="https://linkedin.com/in/rohitmeshram" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
-                    <a href="mailto:hello@rohitmeshram.com" class="btn btn-secondary">Email</a>
+                    <a href="#work" class="btn btn-gradient">View Work</a>
+                </div>
+                <div class="hero__social">
+                    <a href="https://linkedin.com/in/rohitmeshram" target="_blank" rel="noopener" class="hero__social-link" aria-label="LinkedIn">
+                        <svg class="hero__social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="mailto:hello@rohitmeshram.com" class="hero__social-link" aria-label="Email">
+                        <svg class="hero__social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                    <a href="https://t.me/slackeromeo" target="_blank" rel="noopener" class="hero__social-link" aria-label="Telegram">
+                        <svg class="hero__social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.886 1.524.182.082.359.17.532.264.316 1.24.706 2.463 1.074 3.694.333.972 1.726 1.034 2.243.188l1.45-2.049 3.213 2.461c.726.52 1.705.246 2.05-.555 1.085-2.645 2.17-5.29 3.248-7.938a443.9 443.9 0 0 0 1.678-4.073c.297-.754.265-1.663-.235-2.332a1.82 1.82 0 0 0-1.381-.716zm-6.747 10.852-1.084 1.561-1.01-3.013 2.094 1.452z"></path>
+                        </svg>
+                    </a>
                 </div>
             </div>
             <a href="#about" class="hero__scroll" aria-label="Scroll to content">
@@ -155,21 +176,21 @@
                             <span class="skill skill--purple">Reliability Engineering</span>
                             <span class="skill skill--blue">SPC & DOE</span>
                             <span class="skill skill--green">Geo-diversification</span>
-                            <span class="skill skill--purple">AI Dashboard</span>
                             <span class="skill skill--orange">NPI Readiness</span>
-                            <span class="skill skill--blue">Smart Sampling</span>
-                            <span class="skill skill--purple">Proactive Monitoring</span>
+                            <span class="skill skill--purple">AI Dashboard</span>
                             <span class="skill skill--green">Supplier Resilience</span>
-                            <span class="skill skill--purple">Manufacturing GPT</span>
-                            <span class="skill skill--blue">Quality Assurance</span>
+                            <span class="skill skill--blue">Smart Sampling</span>
                             <span class="skill skill--orange">CAPA</span>
+                            <span class="skill skill--purple">Proactive Monitoring</span>
+                            <span class="skill skill--blue">Quality Assurance</span>
                             <span class="skill skill--green">Lean Manufacturing</span>
-                            <span class="skill skill--blue">Six Sigma</span>
                             <span class="skill skill--orange">Root Cause Analysis</span>
-                            <span class="skill skill--blue">Shainin Red X</span>
+                            <span class="skill skill--purple">Manufacturing GPT</span>
+                            <span class="skill skill--blue">Six Sigma</span>
                             <span class="skill skill--green">Project Management</span>
-                            <span class="skill skill--blue">Critical Thinking</span>
                             <span class="skill skill--orange">Hardware Quality</span>
+                            <span class="skill skill--blue">Shainin Red X</span>
+                            <span class="skill skill--purple">Critical Thinking</span>
                             <span class="skill skill--green">Supplier Quality</span>
                         </div>
                     </div>
@@ -416,7 +437,6 @@
         <section class="contact" id="contact">
             <div class="container">
                 <h2 class="contact__title">Let's Connect</h2>
-                <p class="contact__location">Cupertino, California</p>
                 <p class="contact__subtitle">
                     Open to thoughtful conversations, collaborations, and ideas for social good.
                 </p>
@@ -438,15 +458,26 @@
                 <!-- EDIT: Your contact information -->
                 <div class="contact__info">
                     <div class="contact__links">
-                        <a href="mailto:hello@rohitmeshram.com" class="contact__link">
-                            <span class="contact__link-label">Email</span>
-                            <span class="contact__link-value">hello@rohitmeshram.com</span>
+                        <a href="mailto:hello@rohitmeshram.com" class="contact__link" aria-label="Email">
+                            <svg class="contact__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
                         </a>
-                        <a href="https://www.linkedin.com/in/rohitmeshram" target="_blank" rel="noopener" class="contact__link">
-                            <span class="contact__link-label">LinkedIn</span>
-                            <span class="contact__link-value">linkedin.com/in/rohitmeshram</span>
+                        <a href="https://www.linkedin.com/in/rohitmeshram" target="_blank" rel="noopener" class="contact__link" aria-label="LinkedIn">
+                            <svg class="contact__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="https://t.me/slackeromeo" target="_blank" rel="noopener" class="contact__link" aria-label="Telegram">
+                            <svg class="contact__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.886 1.524.182.082.359.17.532.264.316 1.24.706 2.463 1.074 3.694.333.972 1.726 1.034 2.243.188l1.45-2.049 3.213 2.461c.726.52 1.705.246 2.05-.555 1.085-2.645 2.17-5.29 3.248-7.938a443.9 443.9 0 0 0 1.678-4.073c.297-.754.265-1.663-.235-2.332a1.82 1.82 0 0 0-1.381-.716zm-6.747 10.852-1.084 1.561-1.01-3.013 2.094 1.452z"></path>
+                            </svg>
                         </a>
                     </div>
+                    <p class="contact__location">Cupertino, California</p>
                 </div>
             </div>
         </section>
@@ -460,6 +491,6 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/main.js?v=20260127"></script>
+    <script src="js/main.js?v=20260128final"></script>
 </body>
 </html>
